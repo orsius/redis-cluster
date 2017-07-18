@@ -11,9 +11,8 @@ $ redis_version:3.2.3
 $ redis_mode:sentinel
 $ os:Linux 3.10.0-514.21.2.el7.x86_64 x86_64
 $ tcp_port:26379 # sentinel
-$ tcp_port:6379  # redis```
-
-
+$ tcp_port:6379  # redis
+```
 ## Requirements
 The prerequisits are simples:
 * have 3 linux servers ready to go with network already configure (ip, firewall, selinux, ntpd)
@@ -37,12 +36,17 @@ $ yum repolist && yum install redis
 $ systemctl start redis.service && systemctl status redis.service
 $ systemctl start redis-sentinel.service && systemctl status redis-sentinel.service
 
+# start services
+$ systemctl start redis.service && systemctl status redis.service
+$ systemctl start redis-sentinel.service && systemctl status redis-sentinel.service
+
 # connect to redis and check your cluster state
 $ redis-cli -h ${SERVER_NODE} -p 6379 -a ${YOUR_PASSWORD} ping
 $ redis-cli -h ${SERVER_NODE} -p 26379 sentinel ckquorum redis-cluster
 ```
 
 Enjoy ;)
+
 
 ## information
 More information can be found on redis website
