@@ -54,7 +54,9 @@ More information can be found on redis website
 
 ## Optional
 If your server is not a fresh install you could already create a redis user:group on all machines just to align the uid and gid values
-`groupadd -g 2005 redis
-useradd -u 2005 -s "/sbin/nologin" -c "redis user" -g 2005 redis`
+```
+groupadd -g 2005 redis
+useradd -u 2005 -s "/sbin/nologin" -c "redis user" -g 2005 redis
+```
 To create a password you can use the following:
 `date | md5sum`
