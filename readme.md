@@ -32,9 +32,11 @@ Run the following command.
 # install packages
 $ curl -L -O https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum install epel-release-latest-7.noarch.rpm
 $ yum repolist && yum install redis
+
 # start services
 $ systemctl start redis.service && systemctl status redis.service
 $ systemctl start redis-sentinel.service && systemctl status redis-sentinel.service
+
 # connect to redis and check your cluster state
 $ redis-cli -h ${SERVER_NODE} -p 6379 -a ${YOUR_PASSWORD} ping
 $ redis-cli -h ${SERVER_NODE} -p 26379 sentinel ckquorum redis-cluster
